@@ -5,7 +5,7 @@ import { Overlay, ModalDiv } from './Modal.styled';
 const modalRoot = document.querySelector('#modal-root');
 
 class Modal extends Component {
-    omponentDidMount() {
+    componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown);
     }
 
@@ -13,9 +13,10 @@ class Modal extends Component {
         window.removeEventListener('keydown', this.handleKeyDown);
     }
 
-    handleKeyDown = event => {
+    handleKeyDown = event => {        
         if (event.code === 'Escape') {
             this.props.onClose();
+            
         }
     };
 
